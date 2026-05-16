@@ -12,6 +12,8 @@ type ItemsFilterProps = {
   setSelectedUsers: (users: string[]) => void;
   comment: string;
   setComment: (comment: string) => void;
+  applyFilters: () => void;
+  resetFilters: () => void;
 };
 
 function ItemsFilter({
@@ -22,6 +24,8 @@ function ItemsFilter({
   setSelectedUsers,
   comment,
   setComment,
+  applyFilters,
+  resetFilters,
 }: ItemsFilterProps) {
   const sortedUsers = users.sort((a, b) => {
     return a.firstName.localeCompare(b.firstName);
@@ -29,7 +33,25 @@ function ItemsFilter({
 
   return (
     <div className={styles.container}>
-      <span className={styles.Title}>Filters</span>
+      <div className={styles.TitleRow}>
+        <span className={styles.Title}>Filters</span>
+        <div className={styles.ButtonContainer}>
+          <div
+            className={styles.ApplyButton}
+            style={{ backgroundColor: "var(--success)" }}
+            onClick={applyFilters}
+          >
+            Apply
+          </div>
+          <div
+            className={styles.ResetButton}
+            style={{ backgroundColor: "var(--error)" }}
+            onClick={resetFilters}
+          >
+            Reset
+          </div>
+        </div>
+      </div>
       <div className={styles.Divider} />
       <div className={styles.FilterContainer}>
         <span className={styles.FilterTitle}>Comment</span>
@@ -38,6 +60,7 @@ function ItemsFilter({
           className={styles.FilterInput}
           value={comment}
           onChange={(e) => setComment(e.target.value)}
+          placeholder="Enter a comment..."
         />
       </div>
       <div className={styles.FilterContainer}>
@@ -45,10 +68,14 @@ function ItemsFilter({
         <div className={styles.FilterOptions}>
           {Object.entries(ItemEnum).map(([key, typeName]) => (
             <div
-              className={styles.FilterOption}
+              className={`${styles.FilterOption} ${selectedTypes.includes(parseInt(key)) ? styles.ItemPillSelected : styles.ItemPill}`}
               key={key}
               onClick={() =>
-                setSelectedTypes([...selectedTypes, parseInt(key)])
+                setSelectedTypes(
+                  selectedTypes.includes(parseInt(key))
+                    ? selectedTypes.filter((type) => type !== parseInt(key))
+                    : [...selectedTypes, parseInt(key)],
+                )
               }
             >
               {typeName}
@@ -61,9 +88,15 @@ function ItemsFilter({
         <div className={styles.FilterOptions}>
           {sortedUsers.map((user) => (
             <div
-              className={styles.FilterOption}
+              className={`${styles.FilterOption} ${selectedUsers.includes(user.id) ? styles.UserPillSelected : styles.UserPill}`}
               key={user.id}
-              onClick={() => setSelectedUsers([...selectedUsers, user.id])}
+              onClick={() =>
+                setSelectedUsers(
+                  selectedUsers.includes(user.id)
+                    ? selectedUsers.filter((userId) => userId !== user.id)
+                    : [...selectedUsers, user.id],
+                )
+              }
             >
               {user.firstName} {user.lastName}
             </div>

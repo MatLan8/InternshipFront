@@ -21,13 +21,26 @@
   --text-light: #f7f7f7;
   --text-dark: #0d0d0d;
 
-  --filter-option: #9fdbc0;
-  --filter-option-hover: #8ed0b3;
+  --filter-option: #7eb8d9;
+  --filter-option-hover: #6fbb97;
 
-  --filter-option-selected: #69b894;
-  --filter-option-selected-hover: #58a884;
+  --filter-option-selected: #4f86a6;
+  --filter-option-selected-hover: #438d6a;
+
+  --item-pill: #74c69d;
+  --item-pill-hover: #63bb8c;
+
+  --item-pill-selected: #40916c;
+  --item-pill-selected-hover: #2d7d5a;
+
+  --user-pill: #7eb8d9;
+  --user-pill-hover: #6ca9cc;
+
+  --user-pill-selected: #4f86a6;
+  --user-pill-selected-hover: #3f7392;
 
   --success: #32c766;
+  --success-hover: #26a854;
 
   --error: #e45757;
   --error-hover: #c74545;

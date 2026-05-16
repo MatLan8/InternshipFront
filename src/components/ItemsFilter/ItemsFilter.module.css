@@ -11,6 +11,15 @@
   text-align: left;
 }
 
+.TitleRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 26px;
+}
+
 .Title {
   font-size: 32px;
   font-weight: 800;
@@ -33,6 +42,44 @@
   margin-bottom: 26px;
 }
 
+.ButtonContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  gap: 20px;
+}
+
+.ApplyButton {
+  color: var(--text-dark);
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-size: 24px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-color: var(--success);
+}
+.ApplyButton:hover {
+  background-color: var(--success-hover);
+}
+
+.ResetButton {
+  color: var(--text-dark);
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-size: 24px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-color: var(--error);
+}
+
+.ResetButton:hover {
+  background-color: var(--error-hover);
+}
+
 .FilterTitle {
   font-size: 24px;
   font-weight: 700;
@@ -41,7 +88,7 @@
 }
 
 .FilterInput {
-  width: 80%;
+  width: 100%;
   height: 40px;
   border-radius: 12px;
   border: 1px solid var(--text-dark);
@@ -64,10 +111,43 @@
 .FilterOption {
   padding: 8px;
   border-radius: 16px;
-  border: 1px solid var(--text-dark);
+  border: 1px solid rgba(13, 13, 13, 0.18);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
   font-size: 22px;
   font-weight: 600;
-  background-color: var(--filter-option);
   color: var(--text-dark);
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.UserPill {
+  background-color: var(--user-pill);
+}
+
+.UserPill:hover {
+  background-color: var(--user-pill-hover);
+}
+
+.UserPillSelected {
+  background-color: var(--user-pill-selected);
+}
+
+.UserPillSelected:hover {
+  background-color: var(--user-pill-selected-hover);
+}
+
+.ItemPill {
+  background-color: var(--item-pill);
+}
+
+.ItemPill:hover {
+  background-color: var(--item-pill-hover);
+}
+
+.ItemPillSelected {
+  background-color: var(--item-pill-selected);
+}
+
+.ItemPillSelected:hover {
+  background-color: var(--item-pill-selected-hover);
 }

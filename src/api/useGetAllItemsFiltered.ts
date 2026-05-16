@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import type { Item } from "../types/Item";
 import axios from "axios";
+import qs from "qs";
 import { API_BASE, API_ROUTES } from "./endpoints";
 
 export type ItemFilter = {
@@ -17,6 +18,8 @@ export const useGetAllItemsFiltered = (filters: ItemFilter) => {
         `${API_BASE}${API_ROUTES.Item.getAllFiltered}`,
         {
           params: filters,
+          paramsSerializer: (params) =>
+            qs.stringify(params, { arrayFormat: "repeat" }),
         },
       );
 

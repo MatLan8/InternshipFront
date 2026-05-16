@@ -4,9 +4,10 @@ import { ItemEnum } from "../../constants/ItemEnum";
 
 type ItemsTableProps = {
   items: Item[];
+  onDelete: (itemId: string, itemIdentifier: string) => void;
 };
 
-export default function ItemsTable({ items }: ItemsTableProps) {
+export default function ItemsTable({ items, onDelete }: ItemsTableProps) {
   return (
     <div className={styles.tableContainer}>
       <table className={styles.table}>
@@ -39,7 +40,12 @@ export default function ItemsTable({ items }: ItemsTableProps) {
               </td>
               <td>{item.userName}</td>
               <td>
-                <div className={styles.deleteButton}>Delete</div>
+                <div
+                  className={styles.deleteButton}
+                  onClick={() => onDelete(item.id, item.identifier)}
+                >
+                  Delete
+                </div>
               </td>
             </tr>
           ))}
