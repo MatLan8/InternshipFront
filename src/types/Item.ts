@@ -1,9 +1,9 @@
 export type Item = {
-  Id: string;
-  Identifier: string;
-  ItemType: number;
-  Comment?: string;
-  PurchaseDate: Date;
-  UserName: string;
-  UserIdentifier: string;
+  id: string;
+  identifier: string;
+  itemType: number;
+  comment?: string;
+  purchaseDate: Date;
+  userName: string;
+  userIdentifier: string;
 };

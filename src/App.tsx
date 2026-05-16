@@ -1,7 +1,14 @@
+import { Routes, Route } from "react-router-dom";
+import ItemsPage from "./pages/ItemsPage/ItemsPage";
+import UsersPage from "./pages/UsersPage/UsersPage";
+
 function App() {
   return (
     <>
-      <h1>Welcome to React with TypeScript!</h1>
+      <Routes>
+        <Route path="/" element={<UsersPage />} />
+        <Route path="/items" element={<ItemsPage />} />
+      </Routes>
     </>
   );
 }

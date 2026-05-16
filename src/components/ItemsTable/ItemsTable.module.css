@@ -1,0 +1,75 @@
+.tableContainer {
+  overflow-y: auto;
+  text-align: left;
+  max-height: calc(100vh - 300px);
+}
+
+.table {
+  width: auto;
+  border-collapse: collapse;
+  font-size: 26px;
+}
+
+.table thead th {
+  position: sticky;
+  top: 0;
+  background-color: var(--tertiary);
+  z-index: 1;
+}
+
+.table th {
+  text-align: left;
+  font-weight: 700;
+  padding-bottom: 10px;
+  padding-right: 50px;
+  border-bottom: 2px solid var(--text-dark);
+}
+
+.table td {
+  font-size: 24px;
+  text-align: left;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-weight: 500;
+  padding-right: 50px;
+  border-bottom: 1px solid var(--text-dark);
+}
+
+.table th:last-child,
+.table td:last-child {
+  padding-right: 0;
+}
+
+.table td:last-child {
+  text-align: right;
+  padding-right: 0;
+}
+
+.table tbody tr {
+  text-align: left;
+  padding: 14px 40px;
+  transition: background 0.15s ease;
+}
+
+.table tbody tr:hover {
+  background: var(--tertiary-hover);
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.deleteButton {
+  background-color: var(--error);
+  color: var(--text-dark);
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-size: 24px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.deleteButton:hover {
+  background-color: var(--error-hover);
+}

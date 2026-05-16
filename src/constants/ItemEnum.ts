@@ -4,3 +4,5 @@ export const ItemEnum: Record<number, string> = {
   2: "SIM Card",
   3: "Laptop",
 };
+
+export const ItemEnumArray = Object.values(ItemEnum);

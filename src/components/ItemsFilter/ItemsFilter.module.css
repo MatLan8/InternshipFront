@@ -1,0 +1,73 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: space-between;
+  margin-bottom: 26px;
+  background-color: var(--tertiary);
+  padding: 20px 20px;
+  border-radius: 12px;
+  width: 100%;
+  text-align: left;
+}
+
+.Title {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+.Divider {
+  width: 100%;
+  height: 3px;
+  background-color: var(--text-dark);
+  margin: 14px 0;
+  border-radius: 999px;
+}
+
+.FilterContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: space-between;
+  margin-bottom: 26px;
+}
+
+.FilterTitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.FilterInput {
+  width: 80%;
+  height: 40px;
+  border-radius: 12px;
+  border: 1px solid var(--text-dark);
+  background-color: var(--tertiary-hover);
+  padding: 4px;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.FilterOptions {
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.FilterOption {
+  padding: 8px;
+  border-radius: 16px;
+  border: 1px solid var(--text-dark);
+  font-size: 22px;
+  font-weight: 600;
+  background-color: var(--filter-option);
+  color: var(--text-dark);
+  cursor: pointer;
+}
