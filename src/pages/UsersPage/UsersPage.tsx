@@ -2,6 +2,7 @@ import { useGetAllUsers } from "../../api/useGetAllUsers";
 import styles from "./UsersPage.module.css";
 import UsersTable from "../../components/UsersTable/UsersTable";
 import { useNavigate } from "react-router-dom";
+import { ROUTES } from "../../routes/paths";
 
 function UsersPage() {
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ function UsersPage() {
         <h1 className={styles.Title}>All Users</h1>
         <div
           className={styles.ButtonContainer}
-          onClick={() => navigate("/items")}
+          onClick={() => navigate(ROUTES.items)}
         >
           Items page
         </div>

@@ -33,6 +33,7 @@
   font-weight: 500;
   padding-right: 50px;
   border-bottom: 1px solid var(--text-dark);
+  max-width: 20vw;
 }
 
 .table th:last-child,

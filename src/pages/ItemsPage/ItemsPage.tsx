@@ -11,8 +11,8 @@ import ItemsFilter from "../../components/ItemsFilter/ItemsFilter";
 import { useState } from "react";
 
 import ConfirmModal from "../../components/ConfirmModal/ConfirmModal";
-import { ExportType } from "../../constants/ExportType";
 import PdfDropdown from "../../components/PdfDropdown/PdfDropdown";
+import { ROUTES } from "../../routes/paths";
 
 function ItemsPage() {
   const navigate = useNavigate();
@@ -111,7 +111,10 @@ function ItemsPage() {
             <PdfDropdown onExport={handleExport} />
           </div>
 
-          <div className={styles.ButtonContainer} onClick={() => navigate("/")}>
+          <div
+            className={styles.ButtonContainer}
+            onClick={() => navigate(ROUTES.users)}
+          >
             Users page
           </div>
         </div>

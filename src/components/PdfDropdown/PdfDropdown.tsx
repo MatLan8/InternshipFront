@@ -33,13 +33,13 @@ function PdfDropdown({ onExport }: PdfDropdownProps) {
             className={styles.Item}
             onClick={() => handleExport(ExportType.Simple)}
           >
-            Simple
+            Simple view
           </div>
           <div
             className={styles.Item}
-            onClick={() => handleExport(ExportType.Detailed)}
+            onClick={() => handleExport(ExportType.User)}
           >
-            Detailed
+            User view
           </div>
         </div>
       </div>
