@@ -17,7 +17,7 @@ function ConfirmModal({
 
   return (
     <div className={styles.Overlay} onClick={onCancel}>
-      <div className={styles.Container}>
+      <div className={styles.Container} onClick={(e) => e.stopPropagation()}>
         <span className={styles.Title}>
           Are you sure you want to delete item: {itemIdentifier}?
         </span>

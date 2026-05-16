@@ -1,18 +1,20 @@
 import styles from "./ItemsPage.module.css";
-import ItemsTable from "../../components/ItemsTable/ItemsTable";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+
+import ItemsTable from "../../components/ItemsTable/ItemsTable";
+import ItemsFilter from "../../components/ItemsFilter/ItemsFilter";
+import ConfirmModal from "../../components/ConfirmModal/ConfirmModal";
+import PdfDropdown from "../../components/PdfDropdown/PdfDropdown";
 
 import { useGetAllUsers } from "../../api/useGetAllUsers";
 import { useGetAllItemsFiltered } from "../../api/useGetAllItemsFiltered";
 import { useDeleteItem } from "../../api/useDeleteItem";
 import { useExportItemsPdf } from "../../api/useExportItemsPdf";
 
-import ItemsFilter from "../../components/ItemsFilter/ItemsFilter";
-import { useState } from "react";
-
-import ConfirmModal from "../../components/ConfirmModal/ConfirmModal";
-import PdfDropdown from "../../components/PdfDropdown/PdfDropdown";
 import { ROUTES } from "../../routes/paths";
+import { downloadPdf } from "../../helpers/downloadPdf";
+import { ExportTypeName } from "../../constants/ExportType";
 
 function ItemsPage() {
   const navigate = useNavigate();
@@ -85,8 +87,7 @@ function ItemsPage() {
       userIds: appliedUsers,
       templateType: template,
     });
-    const url = window.URL.createObjectURL(response);
-    window.open(url, "_blank");
+    downloadPdf(response, `items_${ExportTypeName[template]}.pdf`);
   };
 
   return (
@@ -130,7 +131,7 @@ function ItemsPage() {
       <ConfirmModal
         isShown={isConfirmModalShown}
         onCancel={() => setIsConfirmModalShown(false)}
-        onConfirm={() => onConfirmModalConfirm()}
+        onConfirm={onConfirmModalConfirm}
         itemIdentifier={deleteItemIdentifier}
       />
     </div>

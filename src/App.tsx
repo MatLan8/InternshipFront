@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import ItemsPage from "./pages/ItemsPage/ItemsPage";
 import UsersPage from "./pages/UsersPage/UsersPage";
 import { ROUTES } from "./routes/paths";
@@ -9,6 +9,7 @@ function App() {
       <Routes>
         <Route path={ROUTES.users} element={<UsersPage />} />
         <Route path={ROUTES.items} element={<ItemsPage />} />
+        <Route path="*" element={<Navigate to={ROUTES.users} replace />} />
       </Routes>
     </>
   );

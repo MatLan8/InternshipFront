@@ -27,10 +27,6 @@ function ItemsFilter({
   applyFilters,
   resetFilters,
 }: ItemsFilterProps) {
-  const sortedUsers = users.sort((a, b) => {
-    return a.firstName.localeCompare(b.firstName);
-  });
-
   return (
     <div className={styles.container}>
       <div className={styles.TitleRow}>
@@ -86,7 +82,7 @@ function ItemsFilter({
       <div className={styles.FilterContainer}>
         <span className={styles.FilterTitle}>Users</span>
         <div className={styles.FilterOptions}>
-          {sortedUsers.map((user) => (
+          {users.map((user) => (
             <div
               className={`${styles.FilterOption} ${selectedUsers.includes(user.id) ? styles.UserPillSelected : styles.UserPill}`}
               key={user.id}

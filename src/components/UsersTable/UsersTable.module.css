@@ -1,4 +1,4 @@
-.table-container {
+.tableContainer {
   overflow: hidden;
   text-align: left;
 }
@@ -35,7 +35,6 @@
 
 .table tbody tr {
   text-align: left;
-  padding: 14px 40px;
   transition: background 0.15s ease;
 }
 
