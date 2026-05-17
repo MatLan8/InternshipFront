@@ -13,7 +13,7 @@
   background-color: var(--info);
   border-radius: 12px;
   overflow: hidden;
-  z-index: 1000;
+  z-index: 50;
 }
 
 .HeaderContainer {
@@ -69,10 +69,9 @@
 }
 
 .divider {
-  width: 100%;
+  width: 80%;
   height: 2px;
   background-color: var(--text-dark);
   border-radius: 999px;
-  width: 80%;
   justify-self: center;
 }

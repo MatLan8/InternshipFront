@@ -32,18 +32,10 @@ function ItemsFilter({
       <div className={styles.TitleRow}>
         <span className={styles.Title}>Filters</span>
         <div className={styles.ButtonContainer}>
-          <div
-            className={styles.ApplyButton}
-            style={{ backgroundColor: "var(--success)" }}
-            onClick={applyFilters}
-          >
+          <div className={styles.ApplyButton} onClick={applyFilters}>
             Apply
           </div>
-          <div
-            className={styles.ResetButton}
-            style={{ backgroundColor: "var(--error)" }}
-            onClick={resetFilters}
-          >
+          <div className={styles.ResetButton} onClick={resetFilters}>
             Reset
           </div>
         </div>

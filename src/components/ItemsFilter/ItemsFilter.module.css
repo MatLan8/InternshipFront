@@ -1,7 +1,6 @@
 .container {
   display: flex;
   flex-direction: column;
-  align-items: left;
   justify-content: space-between;
   margin-bottom: 26px;
   background-color: var(--tertiary);
@@ -102,7 +101,7 @@
 .FilterOptions {
   display: flex;
   flex-direction: row;
-  align-items: left;
+  align-items: flex-start;
   justify-content: flex-start;
   flex-wrap: wrap;
   gap: 20px;
