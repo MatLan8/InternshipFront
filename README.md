@@ -42,11 +42,7 @@ npm install
 
 ## Environment Configuration
 
-1. Create a local environment file:
-
-```bash
-cp .env.local_example .env.local
-```
+1. Create a local environment file by copying .env.local_example and renaming it to .env.local
 
 2. Update `.env.local` with the backend API URL:
 
