@@ -73,22 +73,30 @@ function ItemsFilter({
       </div>
       <div className={styles.FilterContainer}>
         <span className={styles.FilterTitle}>Users</span>
-        <div className={styles.FilterOptions}>
-          {users.map((user) => (
-            <div
-              className={`${styles.FilterOption} ${selectedUsers.includes(user.id) ? styles.UserPillSelected : styles.UserPill}`}
-              key={user.id}
-              onClick={() =>
-                setSelectedUsers(
-                  selectedUsers.includes(user.id)
-                    ? selectedUsers.filter((userId) => userId !== user.id)
-                    : [...selectedUsers, user.id],
-                )
-              }
-            >
-              {user.firstName} {user.lastName}
-            </div>
-          ))}
+        <div className={styles.UsersContainer}>
+          {users.map((user) => {
+            const isSelected = selectedUsers.includes(user.id);
+            return (
+              <div
+                className={`${styles.UserRow} ${isSelected ? styles.UserRowSelected : ""}`}
+                key={user.id}
+                onClick={() =>
+                  setSelectedUsers(
+                    isSelected
+                      ? selectedUsers.filter((id) => id !== user.id)
+                      : [...selectedUsers, user.id],
+                  )
+                }
+              >
+                <div
+                  className={`${styles.Checkbox} ${isSelected ? styles.CheckboxChecked : ""}`}
+                />
+                <span>
+                  {user.firstName} {user.lastName}
+                </span>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>

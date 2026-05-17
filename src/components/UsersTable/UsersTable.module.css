@@ -1,12 +1,23 @@
 .tableContainer {
-  overflow: hidden;
+  overflow-y: auto;
   text-align: left;
+  max-height: calc(100vh - 300px);
+  padding-right: 20px;
+  scrollbar-color: var(--text-dark) transparent;
+  scrollbar-width: thin;
 }
 
 .table {
   width: auto;
   border-collapse: collapse;
   font-size: 26px;
+}
+
+.table thead th {
+  position: sticky;
+  top: 0;
+  background-color: var(--tertiary);
+  z-index: 1;
 }
 
 .table th {

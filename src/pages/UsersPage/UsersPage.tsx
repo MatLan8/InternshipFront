@@ -13,18 +13,20 @@ function UsersPage() {
   if (!data) return <div>No data</div>;
 
   return (
-    <div className={styles.Container}>
-      <div className={styles.TitleContainer}>
-        <h1 className={styles.Title}>All Users</h1>
-        <div
-          className={styles.ButtonContainer}
-          onClick={() => navigate(ROUTES.items)}
-        >
-          Items page
+    <div className={styles.Wrapper}>
+      <div className={styles.Container}>
+        <div className={styles.TitleContainer}>
+          <h1 className={styles.Title}>All Users</h1>
+          <div
+            className={styles.ButtonContainer}
+            onClick={() => navigate(ROUTES.items)}
+          >
+            Items page
+          </div>
         </div>
-      </div>
-      <div className={styles.TableContainer}>
-        <UsersTable users={data} />
+        <div className={styles.TableContainer}>
+          <UsersTable users={data} />
+        </div>
       </div>
     </div>
   );

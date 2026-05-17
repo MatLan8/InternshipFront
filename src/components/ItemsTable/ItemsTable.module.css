@@ -2,6 +2,8 @@
   overflow-y: auto;
   text-align: left;
   max-height: calc(100vh - 300px);
+  padding-right: 20px;
+  scrollbar-color: var(--text-dark) transparent;
 }
 
 .table {
