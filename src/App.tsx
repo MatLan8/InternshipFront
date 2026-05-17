@@ -20,8 +20,8 @@ function App() {
         newestOnTop={true}
         closeOnClick
         rtl={false}
-        pauseOnFocusLoss
         theme="dark"
+        pauseOnHover={false}
       />
     </>
   );
