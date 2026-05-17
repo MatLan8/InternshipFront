@@ -15,6 +15,7 @@ import { useExportItemsPdf } from "../../api/useExportItemsPdf";
 import { ROUTES } from "../../routes/paths";
 import { downloadPdf } from "../../helpers/downloadPdf";
 import { ExportTypeName } from "../../constants/ExportType";
+import { toast } from "react-toastify";
 
 function ItemsPage() {
   const navigate = useNavigate();
@@ -74,20 +75,32 @@ function ItemsPage() {
   };
 
   const onConfirmModalConfirm = () => {
-    deleteItem(deleteItemId);
+    deleteItem(deleteItemId, {
+      onSuccess: () => {
+        toast.success("Item deleted successfully");
+      },
+      onError: () => {
+        toast.error("Failed to delete item");
+      },
+    });
     setDeleteItemId("");
     setDeleteItemIdentifier("");
     setIsConfirmModalShown(false);
   };
 
   const handleExport = async (template: number) => {
-    const response = await exportPdf({
-      itemTypes: appliedTypes,
-      comment: appliedComment,
-      userIds: appliedUsers,
-      templateType: template,
-    });
-    downloadPdf(response, `items_${ExportTypeName[template]}.pdf`);
+    try {
+      const response = await exportPdf({
+        itemTypes: appliedTypes,
+        comment: appliedComment,
+        userIds: appliedUsers,
+        templateType: template,
+      });
+      downloadPdf(response, `items_${ExportTypeName[template]}.pdf`);
+      toast.success("PDF exported successfully");
+    } catch {
+      toast.error("Failed to export PDF");
+    }
   };
 
   return (
