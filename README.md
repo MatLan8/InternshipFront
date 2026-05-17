@@ -1,73 +1,77 @@
-# React + TypeScript + Vite
+## Getting Started
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Follow the steps below to run the project locally.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Backend Setup
 
-## React Compiler
+1. Clone the backend repository:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone https://github.com/MatLan8/InternshipBack
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Open the project in your preferred IDE (e.g. Visual Studio or Rider).
+3. Run the backend API using HTTP.
+4. Ensure the backend is running before starting the frontend application.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Default backend URL:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+http://localhost:5036
 ```
+
+---
+
+## Frontend Setup
+
+1. Clone the frontend repository:
+
+```bash
+git clone https://github.com/MatLan8/InternshipFront
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+---
+
+## Environment Configuration
+
+1. Create a local environment file:
+
+```bash
+cp .env.local_example .env.local
+```
+
+2. Update `.env.local` with the backend API URL:
+
+```bash
+VITE_BASE_URL=http://localhost:5036/api
+```
+
+Make sure this value matches your running backend configuration.
+
+---
+
+## Run the Frontend
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Open the URL shown in the terminal in your browser.
+
+---
+
+## Notes
+
+- The backend must be running before starting the frontend.
+- Ensure the API base URL in `.env.local` is correct.
+- Default backend port is 5036 unless changed in configuration.
