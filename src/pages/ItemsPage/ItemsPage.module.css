@@ -55,21 +55,6 @@
   gap: 20px;
 }
 
-.ExportButton {
-  background-color: var(--info);
-  color: var(--text-dark);
-  padding: 10px 20px;
-  border-radius: 12px;
-  font-size: 24px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.ExportButton:hover {
-  background-color: var(--info-hover);
-}
-
 .Title {
   font-size: 36px;
   font-weight: 800;
@@ -101,4 +86,39 @@
   display: flex;
   height: 100%;
   width: 100%;
+}
+
+@media (max-width: 1920px) {
+  .FilterContainer {
+    margin-right: 67px;
+  }
+
+  .DataContainer {
+    padding: 30px;
+  }
+
+  .TableContainer {
+    padding: 18px;
+  }
+
+  .TitleContainer {
+    margin-bottom: 18px;
+  }
+
+  .InfoContainer {
+    gap: 14px;
+  }
+
+  .ButtonContainer {
+    font-size: 18px;
+    padding: 8px 16px;
+  }
+
+  .Title {
+    font-size: 28px;
+  }
+
+  .NoData {
+    font-size: 28px;
+  }
 }

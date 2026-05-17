@@ -44,3 +44,29 @@
 .ButtonContainer:hover {
   background-color: var(--info-hover);
 }
+
+@media (max-width: 1920px) {
+  .Container {
+    padding: 30px;
+    border-radius: 10px;
+  }
+
+  .TableContainer {
+    padding: 18px;
+    border-radius: 10px;
+  }
+
+  .TitleContainer {
+    margin-bottom: 18px;
+  }
+
+  .Title {
+    font-size: 24px;
+  }
+
+  .ButtonContainer {
+    font-size: 16px;
+    padding: 6px 14px;
+    border-radius: 10px;
+  }
+}
