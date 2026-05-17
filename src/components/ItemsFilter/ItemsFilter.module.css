@@ -254,4 +254,30 @@
     padding: 6px;
     border-radius: 12px;
   }
+
+  .UsersContainer {
+    gap: 8px;
+    max-height: 34vh;
+  }
+
+  .UserRow {
+    gap: 8px;
+    padding: 6px 8px;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+
+  .Checkbox {
+    width: 14px;
+    height: 14px;
+    border-width: 1px;
+  }
+
+  .CheckboxChecked::after {
+    left: 5px;
+    top: 1px;
+    width: 4px;
+    height: 7px;
+    border-width: 1.5px;
+  }
 }

@@ -94,7 +94,8 @@
   }
 
   .DataContainer {
-    padding: 30px;
+    padding: 20px 30px;
+    padding-top: 0;
   }
 
   .TableContainer {
